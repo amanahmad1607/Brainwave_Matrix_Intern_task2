@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engify.in - Your Online Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Engify.in</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="cart.html">Cart 🛒</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Engify.in</h2>
+    <p>Find the best gadgets at unbeatable prices</p>
+    <a href="#" class="btn">Shop Now</a>
+  </section>
+
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-list">
+
+      <!-- Product Cards -->
+      <!-- Use ALT name in button for consistency -->
+      <script>
+        const products = [
+          { name: 'Wireless Headphones', price: 1999, img: 'https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=2013&auto=format&fit=crop' },
+          { name: 'Smart Watch', price: 2999, img: 'https://images.unsplash.com/photo-1517420879524-86d64ac2f339?q=80&w=1926&auto=format&fit=crop' },
+          { name: 'Bluetooth Speaker', price: 1499, img: 'https://media.istockphoto.com/id/481820964/photo/woman-at-home-listening-to-music.webp?a=1&b=1&s=612x612&w=0&k=20&c=NG0aLDE3OggDTZejRR-cdShDW9fGqVQvxV3-Rqhmp-I=' },
+          { name: 'Gaming Mouse', price: 999, img: 'https://images.unsplash.com/photo-1613141412501-9012977f1969?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FtaW5nJTIwbW91c2V8ZW58MHx8MHx8fDA%3D' },
+          { name: 'Mechanical Keyboard', price: 3499, img: 'https://images.unsplash.com/photo-1602025882379-e01cf08baa51?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVjaGFuaWNhbCUyMGtleWJvYXJkfGVufDB8fDB8fHww' },
+          { name: 'Smartphone', price: 7999, img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnQlMjBwaG9uZXxlbnwwfHwwfHx8MA%3D%3D' },
+          { name: 'Laptop Stand', price: 699, img: 'https://images.unsplash.com/photo-1629317480826-910f729d1709?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFwdG9wJTIwc3RhbmR8ZW58MHx8MHx8fDA%3D' },
+          { name: 'USB-C Hub', price: 1299, img: 'https://media.istockphoto.com/id/2193619816/photo/usb-type-c-hub-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=1OpABJ_kpTlyTBqkFCEICMOSjtUbpnrGQTwF6pMaoE0=' },
+          { name: 'Noise Cancelling Earbuds', price: 2599, img: 'https://images.unsplash.com/photo-1733641839419-7b9de83d7a0e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Tm9pc2UlMjBDYW5jZWxsaW5nJTIwRWFyYnVkc3xlbnwwfHwwfHx8MA%3D%3D' },
+          { name: 'Smart Glasses', price: 5599, img: 'https://media.istockphoto.com/id/1341285836/photo/smart-glasses-with-proection-on-the-screen-vr-virtual-reality-and-ar-augmented-reality.webp?a=1&b=1&s=612x612&w=0&k=20&c=cLMCRLgRrZzPbcqVMxPXVQURQ4YC0dFGeUwLPd59Bnk=' },
+          { name: 'Drone Camera', price: 15999, img: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJvbmUlMjBjYW1lcmF8ZW58MHx8MHx8fDA%3D' },
+          { name: 'Mini Projector', price: 4999, img: 'https://media.istockphoto.com/id/652812364/photo/portable-working-beamer-projector.webp?a=1&b=1&s=612x612&w=0&k=20&c=DAwNNLCZi7OPJNM8R9btHdsI5N58BE4pfW0D2GIUEfU=' },
+          { name: 'Tablet', price: 9999, img: 'https://images.unsplash.com/photo-1542751110-97427bbecf20?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VGFibGV0fGVufDB8fDB8fHww' },
+          { name: 'Fitness Band', price: 1299, img: 'https://media.istockphoto.com/id/1249498626/photo/indian-boy-wearing-smartwatch-in-his-hand.webp?a=1&b=1&s=612x612&w=0&k=20&c=ompArvtAhh_UWATuST26qo1xIm5nBueaifzR_27k9E4=' },
+          { name: 'VR Headset', price: 11999, img: 'https://media.istockphoto.com/id/618761378/photo/man-using-virtual-reality-simulator-headset.webp?a=1&b=1&s=612x612&w=0&k=20&c=g-G9uKI3fUQ837nJN-jUI5YPMraBd5k_MrkylkTOX0Q=' },
+          { name: 'Power Bank', price: 899, img: 'https://media.istockphoto.com/id/1176053465/photo/powerful-external-battery-with-usb-wire.webp?a=1&b=1&s=612x612&w=0&k=20&c=uTpN3KvU0j7PIhH9LN0tL-AU5d8x2hacYA_X5DL6t-c=' },
+          { name: 'Desk Lamp', price: 499, img: 'https://media.istockphoto.com/id/182370767/photo/profile-of-yellow-desk-lamp-turned-on-on-white-table.webp?a=1&b=1&s=612x612&w=0&k=20&c=AzknuHS4JdLOuQHu_gggGRF375YGVaxl0iGf1IxH7B8=' },
+          { name: 'External SSD', price: 3599, img: 'https://media.istockphoto.com/id/1257616160/photo/modern-laptop-sd-card-flash-memory-card-and-ssd-hard-drive-on-a-wooden-desk.webp?a=1&b=1&s=612x612&w=0&k=20&c=jRfYCu7f5tcqI4hUePslIxjGy_LnlXO1HJuMpvToc-A=' },
+          { name: 'WiFi Router', price: 1899, img: 'https://media.istockphoto.com/id/1270583054/photo/selective-focus-at-router-internet-router-on-working-table-with-blurred-man-connect-the-cable.webp?a=1&b=1&s=612x612&w=0&k=20&c=UC41JjbyRdfNDlj4FOTOz8q0PvTbZRapPnt4l2swUlU=' },
+          { name: 'Streaming Microphone', price: 2899, img: 'https://media.istockphoto.com/id/1412634953/photo/podcast-recording-station.webp?a=1&b=1&s=612x612&w=0&k=20&c=icIYH7XfHkf_SuO57lhVwlwpGFJ6WpikW1ztRbOjGCI=' }
+        ];
+
+        document.write(products.map(p => `
+          <div class="product-card">
+            <img src="${p.img}" alt="${p.name}" />
+            <h3>${p.name}</h3>
+            <p>₹${p.price}</p>
+            <button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
+          </div>
+        `).join(''));
+      </script>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Engify.in. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

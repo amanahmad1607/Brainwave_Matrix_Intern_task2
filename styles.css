@@ -1,0 +1,149 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: #1e2a38;
+  color: white;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJhY2tncm91bmQlMjBmb3IlMjBlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZm9yJTIwZWxlY3Ryb25pYyUyMGdvb2RzfGVufDB8fDB8fHww') no-repeat center/cover;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: #ff5722;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #e64a19;
+}
+
+/* Products */
+.products {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card button {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.product-card button:hover {
+  background: #1976d2;
+}
+
+/* Footer */
+footer {
+  background: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+.cart {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: #f8f8f8;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-items li {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #0072ff;
+}
+#billing {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
